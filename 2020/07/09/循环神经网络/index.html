@@ -477,19 +477,19 @@
 <p>因为如CNN这种前馈神经网络对于之前的输入是没有记忆能力的，只考虑当前的输入，没有时间顺序的概念。</p>
 <p>但是RNN增加了层与层之间的反馈链接，不仅考虑当前输入，还会考虑之前记忆的信息，所以RNN对于处理时序数据比较好，特别是文本这种输出结果需要考虑到上下文联系的。</p>
 <h2 id="基础的RNN模型"><a href="#基础的RNN模型" class="headerlink" title="基础的RNN模型"></a>基础的RNN模型</h2><p><img src="RNN.jpg" alt="如图"></p>
-<p>y^1^表示arrive出现的概率，隐藏层a^1^存储中间结果（<strong>中间结果a^1^和输出结果y^1^是不同的，a^1^在经过一个全连接层后才能得到y^1^</strong>）。在y^2^计算Taipei出现的概率之前，将x^1^存储的中间结果和x^2^两个作为输入向量，同时隐藏层a^2^存储中间结果，以此作为y^3^的输入向量，以此类推。</p>
+<p>$y^1$表示arrive出现的概率，隐藏层$a^1$存储中间结果（<strong>中间结果$a^1$和输出结果$y^1$是不同的，$a^1$在经过一个全连接层后才能得到$y^1$</strong>）。在$y^2$计算Taipei出现的概率之前，将$x^1$存储的中间结果和$x^2$两个作为输入向量，同时隐藏层$a^2$存储中间结果，以此作为$y^3$的输入向量，以此类推。</p>
 <p><strong>注意：The same network is used again and again 的意思是：图中并不是三段网络，而是同一段网络在三个不同的时间点被使用了三次，三次的输入分别为arrive、Taipei、on</strong></p>
 <h2 id="Bidirectional-RNN"><a href="#Bidirectional-RNN" class="headerlink" title="Bidirectional RNN"></a>Bidirectional RNN</h2><p><img src="Bidirectional_RNN.jpg" alt="如图"></p>
 <p>普通的RNN模型应该是将句子转换为向量，按照词语顺序从左到右进行训练，这样存在的一个问题是：句中某一个词出现的概率只会受到排在它之前的词语的影响，如“Taipei”只会受到“arrive”的影响，不会受到后面句子中词语的影响。</p>
 <blockquote>
-<p>因为在网络训练中，a^1^存储的是arrive的中间结果（该中间结果也受到了arrive之前词语的影响，参考隐马尔可夫模型），x^2^除了将Taipei作为输入外，还会读取a^1^中的数据。</p>
+<p>因为在网络训练中，$a^1$存储的是arrive的中间结果（该中间结果也受到了arrive之前词语的影响，参考隐马尔可夫模型），$x^2$除了将Taipei作为输入外，还会读取$a^1$中的数据。</p>
 </blockquote>
 <p><strong>双向RNN有什么好处呢？</strong></p>
 <p>主要思想：同时训练一个正向RNN和一个反向RNN，将两个RNN的hiden layer放到一起，由此产生输出结果y。</p>
 <blockquote>
-<p>y^t+1^不止会受到x^t+1^之前的影响，还会受到x^t+1^之后的影响，换言之，一个词语会受到整个句子中词语的影响。</p>
+<p>$y^t+1$不止会受到$x^t+1$之前的影响，还会受到$x^t+1$之后的影响，换言之，一个词语会受到整个句子中词语的影响。</p>
 </blockquote>
-<h2 id="Long-Short-term-Memory-LSTM"><a href="#Long-Short-term-Memory-LSTM" class="headerlink" title="Long Short-term Memory(LSTM)"></a>Long Short-term Memory(LSTM)</h2><p>这里说的Memory其实就是RNN中存储的中间结果，既可以写入，也可以读出。</p>
+<h2 id="Long-Short-term-Memory-—-LSTM"><a href="#Long-Short-term-Memory-—-LSTM" class="headerlink" title="Long Short-term Memory —-LSTM"></a>Long Short-term Memory —-LSTM</h2><p>这里说的Memory其实就是RNN中存储的中间结果，既可以写入，也可以读出。</p>
 <blockquote>
 <p>冷知识：为什么是<strong>Short-term</strong>，而不是<strong>Long-short</strong>？</p>
 </blockquote>
@@ -510,7 +510,7 @@
 </blockquote>
 <p><img src="LSTM2.jpg" alt="如图"></p>
 <blockquote>
-<p>LSTM中输入向量的参数是一般RNN的四倍，因为还需要额外的参数控制3个门单元，向量z^i^的每个维度数据对应每个LSTM的input gate，向量z^f^的每个维度数据对应每个LSTM的forget gate，向量z^o^的每个维度数据对应每个LSTM的output gate。</p>
+<p>LSTM中输入向量的参数是一般RNN的四倍，因为还需要额外的参数控制3个门单元，向量$z^i$的每个维度数据对应每个LSTM的input gate，向量$z^f$的每个维度数据对应每个LSTM的forget gate，向量$z^o$的每个维度数据对应每个LSTM的output gate。</p>
 </blockquote>
 <p><img src="LSTM3.jpg" alt="如图"></p>
 <blockquote>
@@ -518,7 +518,7 @@
 </blockquote>
 <p><img src="LSTM4.jpg" alt="如图"></p>
 <blockquote>
-<p>实际的LSTM计算过程：前一段网络中的memory值c^t^，隐藏层中的值h^t^，以及这一段的输入x，都会影响这一段网络中的4个gate。</p>
+<p>实际的LSTM计算过程：前一段网络中的memory值$c^t$，隐藏层中的值$h^t$，以及这一段的输入x，都会影响这一段网络中的4个gate。</p>
 </blockquote>
 <p><img src="LSTM5.jpg" alt="如图"></p>
 <h2 id="RNN所存在的缺陷：训练时容易出现梯度消失或梯度爆炸的问题"><a href="#RNN所存在的缺陷：训练时容易出现梯度消失或梯度爆炸的问题" class="headerlink" title="RNN所存在的缺陷：训练时容易出现梯度消失或梯度爆炸的问题"></a>RNN所存在的缺陷：训练时容易出现梯度消失或梯度爆炸的问题</h2><p>参考文章：<a href="https://zhuanlan.zhihu.com/p/28687529" target="_blank" rel="noopener">RNN梯度消失与梯度爆炸的原因</a></p>
@@ -880,6 +880,43 @@
 </div>
 
 
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: 星辰大海<br />'
+            + '文章作者: Jeffrey<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
 
 <!-- 代码块功能依赖 -->
 <script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
@@ -1004,6 +1041,13 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 
 </main>
 
+
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
+    });
+</script>
 
 
 
