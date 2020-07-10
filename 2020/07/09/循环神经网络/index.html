@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Hello World, 星辰大海">
+    <meta name="keywords" content="循环神经网络, 星辰大海">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Hello World | 星辰大海</title>
+    <title>循环神经网络 | 星辰大海</title>
     <link rel="icon" type="image/jpeg" href="/%E7%8B%97%E5%A4%B4.jpg">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -304,12 +304,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/7.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Hello World</h1>
+                    <h1 class="description center-align post-title">循环神经网络</h1>
                 </div>
             </div>
         </div>
@@ -424,12 +424,29 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/RNN/">
+                                <span class="chip bg-color">RNN</span>
+                            </a>
+                        
+                            <a href="/tags/LSTM/">
+                                <span class="chip bg-color">LSTM</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" class="post-category">
+                                深度学习
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -438,7 +455,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-06-25
+                    2020-07-09
                 </div>
                 
 
@@ -454,19 +471,64 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+                <h1 id="循环神经网络"><a href="#循环神经网络" class="headerlink" title="循环神经网络"></a>循环神经网络</h1><blockquote>
+<p>为什么RNN会成为NLP领域中比较传统的模型？</p>
+</blockquote>
+<p>因为如CNN这种前馈神经网络对于之前的输入是没有记忆能力的，只考虑当前的输入，没有时间顺序的概念。</p>
+<p>但是RNN增加了层与层之间的反馈链接，不仅考虑当前输入，还会考虑之前记忆的信息，所以RNN对于处理时序数据比较好，特别是文本这种输出结果需要考虑到上下文联系的。</p>
+<h2 id="基础的RNN模型"><a href="#基础的RNN模型" class="headerlink" title="基础的RNN模型"></a>基础的RNN模型</h2><p><img src="RNN.jpg" alt="如图"></p>
+<p>y^1^表示arrive出现的概率，隐藏层a^1^存储中间结果（<strong>中间结果a^1^和输出结果y^1^是不同的，a^1^在经过一个全连接层后才能得到y^1^</strong>）。在y^2^计算Taipei出现的概率之前，将x^1^存储的中间结果和x^2^两个作为输入向量，同时隐藏层a^2^存储中间结果，以此作为y^3^的输入向量，以此类推。</p>
+<p><strong>注意：The same network is used again and again 的意思是：图中并不是三段网络，而是同一段网络在三个不同的时间点被使用了三次，三次的输入分别为arrive、Taipei、on</strong></p>
+<h2 id="Bidirectional-RNN"><a href="#Bidirectional-RNN" class="headerlink" title="Bidirectional RNN"></a>Bidirectional RNN</h2><p><img src="Bidirectional_RNN.jpg" alt="如图"></p>
+<p>普通的RNN模型应该是将句子转换为向量，按照词语顺序从左到右进行训练，这样存在的一个问题是：句中某一个词出现的概率只会受到排在它之前的词语的影响，如“Taipei”只会受到“arrive”的影响，不会受到后面句子中词语的影响。</p>
+<blockquote>
+<p>因为在网络训练中，a^1^存储的是arrive的中间结果（该中间结果也受到了arrive之前词语的影响，参考隐马尔可夫模型），x^2^除了将Taipei作为输入外，还会读取a^1^中的数据。</p>
+</blockquote>
+<p><strong>双向RNN有什么好处呢？</strong></p>
+<p>主要思想：同时训练一个正向RNN和一个反向RNN，将两个RNN的hiden layer放到一起，由此产生输出结果y。</p>
+<blockquote>
+<p>y^t+1^不止会受到x^t+1^之前的影响，还会受到x^t+1^之后的影响，换言之，一个词语会受到整个句子中词语的影响。</p>
+</blockquote>
+<h2 id="Long-Short-term-Memory-LSTM"><a href="#Long-Short-term-Memory-LSTM" class="headerlink" title="Long Short-term Memory(LSTM)"></a>Long Short-term Memory(LSTM)</h2><p>这里说的Memory其实就是RNN中存储的中间结果，既可以写入，也可以读出。</p>
+<blockquote>
+<p>冷知识：为什么是<strong>Short-term</strong>，而不是<strong>Long-short</strong>？</p>
+</blockquote>
+<p>在传统RNN中Memory都是比较短暂的，一旦有x作为输入，那么memory中原来的数据就会被洗掉，生成新的数据。<br>但是LSTM中的memory相对来说是较长的，<strong>因为Forget Gate会决定是否替换掉memory中的数据。</strong></p>
+<p><img src="LSTM.jpg" alt="如图"></p>
+<p>1.LSTM中一共有4个输入单元，一个输出单元：</p>
+<ul>
+<li>输入向量x</li>
+<li>控制Input Gate的信号：决定是否将x作为当前输入</li>
+<li>控制Output Gate的信号：决定是否将y作为当前输出</li>
+<li>控制Forget Gate的信号：决定是否将中间结果存入memory</li>
+<li>输出向量y</li>
+</ul>
+<p><img src="LSTM1.jpg" alt="如图"></p>
+<p>2.每一门中都包含一个sigmoid激活函数，代表门打开的程度。</p>
+<blockquote>
+<p>LSTM的计算过程如图所示：</p>
+</blockquote>
+<p><img src="LSTM2.jpg" alt="如图"></p>
+<blockquote>
+<p>LSTM中输入向量的参数是一般RNN的四倍，因为还需要额外的参数控制3个门单元，向量z^i^的每个维度数据对应每个LSTM的input gate，向量z^f^的每个维度数据对应每个LSTM的forget gate，向量z^o^的每个维度数据对应每个LSTM的output gate。</p>
+</blockquote>
+<p><img src="LSTM3.jpg" alt="如图"></p>
+<blockquote>
+<p>一般LSTM的计算过程：</p>
+</blockquote>
+<p><img src="LSTM4.jpg" alt="如图"></p>
+<blockquote>
+<p>实际的LSTM计算过程：前一段网络中的memory值c^t^，隐藏层中的值h^t^，以及这一段的输入x，都会影响这一段网络中的4个gate。</p>
+</blockquote>
+<p><img src="LSTM5.jpg" alt="如图"></p>
+<h2 id="RNN所存在的缺陷：训练时容易出现梯度消失或梯度爆炸的问题"><a href="#RNN所存在的缺陷：训练时容易出现梯度消失或梯度爆炸的问题" class="headerlink" title="RNN所存在的缺陷：训练时容易出现梯度消失或梯度爆炸的问题"></a>RNN所存在的缺陷：训练时容易出现梯度消失或梯度爆炸的问题</h2><p>参考文章：<a href="https://zhuanlan.zhihu.com/p/28687529" target="_blank" rel="noopener">RNN梯度消失与梯度爆炸的原因</a></p>
+<p>W稍微过大或过小，都会对输出结果y产生很大的影响：</p>
+<p><img src="why.jpg" alt="如图"></p>
+<p><strong>解决办法1：LSTM能解决梯度消失的问题</strong></p>
+<p>参考文章：<a href="https://www.cnblogs.com/bonelee/p/10475453.html" target="_blank" rel="noopener"> 为什么LSTM能解决梯度问题？</a></p>
+<p>解释起来比较复杂，中间有些数学公式也并没有看懂，大致能够理解中间过程，有需要的时候再回头看。</p>
+<p><img src="LSTM6.jpg" alt="如图"></p>
+<p><strong>解决办法2：引入ReLu激活函数</strong></p>
 
             </div>
             <hr/>
@@ -492,7 +554,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://jeffreylyx.github.io/2020/06/25/hello-world/">http://jeffreylyx.github.io/2020/06/25/hello-world/</a>
+                    <a href="https://jeffreylyx.github.io/2020/07/09/%E5%BE%AA%E7%8E%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/">https://jeffreylyx.github.io/2020/07/09/%E5%BE%AA%E7%8E%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -529,7 +591,15 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/RNN/">
+                                    <span class="chip bg-color">RNN</span>
+                                </a>
+                            
+                                <a href="/tags/LSTM/">
+                                    <span class="chip bg-color">LSTM</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -700,34 +770,54 @@
                 <i class="far fa-dot-circle"></i>&nbsp;本篇
             </div>
             <div class="card">
-                <a href="/2020/06/25/hello-world/">
+                <a href="/2020/07/09/%E5%BE%AA%E7%8E%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="循环神经网络">
                         
-                        <span class="card-title">Hello World</span>
+                        <span class="card-title">循环神经网络</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hex
+                            循环神经网络
+为什么RNN会成为NLP领域中比较传统的模型？
+
+因为如CNN这种前馈神经网络对于之前的输入是没有记忆能力的，只考虑当前的输入，没有时间顺序的概念。
+但是RNN增加了层与层之间的反馈链接，不仅考虑当前输入，还会考虑之前记忆的信
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-25
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-09
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            Jeffrey
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" class="post-category">
+                                    深度学习
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
 
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/RNN/">
+                        <span class="chip bg-color">RNN</span>
+                    </a>
+                    
+                    <a href="/tags/LSTM/">
+                        <span class="chip bg-color">LSTM</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
@@ -735,37 +825,51 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/06/25/hello-world/">
+                <a href="/2020/07/07/%E6%9C%89%E7%94%A8%E7%9A%84%E7%BD%91%E7%AB%99/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="有用的网站">
                         
-                        <span class="card-title">Hello World</span>
+                        <span class="card-title">有用的网站</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hex
+                            
+李宏毅深度学习的视频及作业
+
+
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-25
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-07
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            Jeffrey
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%85%B6%E4%BB%96/" class="post-category">
+                                    其他
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
-
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E5%B0%8F%E5%B7%A5%E5%85%B7/">
+                        <span class="chip bg-color">小工具</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
