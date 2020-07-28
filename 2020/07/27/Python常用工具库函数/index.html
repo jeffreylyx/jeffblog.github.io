@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="有用的网站, 星辰大海">
+    <meta name="keywords" content="Python常用工具库函数, 星辰大海">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>有用的网站 | 星辰大海</title>
+    <title>Python常用工具库函数 | 星辰大海</title>
     <link rel="icon" type="image/jpeg" href="/%E7%8B%97%E5%A4%B4.jpg">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -304,12 +304,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/16.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">有用的网站</h1>
+                    <h1 class="description center-align post-title">Python常用工具库函数</h1>
                 </div>
             </div>
         </div>
@@ -426,12 +426,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99/">
-                                <span class="chip bg-color">学习资料</span>
-                            </a>
-                        
-                            <a href="/tags/%E7%BD%91%E7%AB%99/">
-                                <span class="chip bg-color">网站</span>
+                            <a href="/tags/Python%E5%87%BD%E6%95%B0/">
+                                <span class="chip bg-color">Python函数</span>
                             </a>
                         
                     </div>
@@ -455,7 +451,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-07-07
+                    2020-07-27
                 </div>
                 
 
@@ -472,14 +468,43 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <ul>
-<li><p><a href="http://speech.ee.ntu.edu.tw/~tlkagk/talk.html" target="_blank" rel="noopener">李宏毅深度学习的视频及作业</a></p>
-</li>
-<li><p><a href="https://colab.research.google.com/drive/16d1Xox0OW-VNuxDn1pvy2UXFIPfieCb9#scrollTo=9YrAlczfM_w6" target="_blank" rel="noopener">RNN作业</a></p>
-</li>
-<li><p><a href="https://github.com/fendouai/PyTorchDocs" target="_blank" rel="noopener">pytorch入门</a></p>
-</li>
+<li>矩阵求和：np.sum()</li>
+<li>词频统计：collections.Counter()</li>
 </ul>
+<h2 id="numpy-sum"><a href="#numpy-sum" class="headerlink" title="numpy.sum()"></a>numpy.sum()</h2><blockquote>
+<p>主要用于数组元素求和</p>
+</blockquote>
+<p><strong>sum(a, axis=None, dtype=None, out=None, keepdims=np._NoValue)</strong></p>
+<pre><code>Examples  
+--------  
+&gt;&gt;&gt; np.sum([0.5, 1.5])  
+2.0  
+&gt;&gt;&gt; np.sum([0.5, 0.7, 0.2, 1.5], dtype=np.int32)  
+1  
+&gt;&gt;&gt; np.sum([[0, 1], [0, 5]])  
+6  
+&gt;&gt;&gt; np.sum([[0, 1], [0, 5]], axis=0)  
+array([0, 6])  
+&gt;&gt;&gt; np.sum([[0, 1], [0, 5]], axis=1)  
+array([1, 5])
+&gt;&gt;&gt;print(np.sum([[1,2],[3,4],[5,6]],axis=0))  
+array([9, 12])
+&gt;&gt;&gt;print(np.sum([[1,2],[3,4],[5,6]],axis=1))
+array([3,7, 11]</code></pre><p><code>axis</code>是控制求和方式的参数<br>当axis=0时，直接将多行压缩成一行，即每一列直接相加，最后返回一行数组。<br>当axis=1时，先将每行的元素累加，组成一行数组并返回。</p>
+<h2 id="collections-Counter"><a href="#collections-Counter" class="headerlink" title="collections.Counter()"></a>collections.Counter()</h2><blockquote>
+<p>主要用于string或list类型的元素频次统计</p>
+</blockquote>
+<p><strong>class Counter(dict):<br>    ‘’’Dict subclass for counting hashable items.  Sometimes called a bag<br> or multiset.  Elements are stored as dictionary keys and their counts are stored as dictionary values.</strong></p>
+<pre><code>&gt;&gt;&gt;colors=[&apos;red&apos;,&apos;blue&apos;,&apos;red&apos;,&apos;green&apos;,&apos;blue&apos;,&apos;blue&apos;,&apos;orange&apos;,&apos;black&apos;]  
+&gt;&gt;&gt;c=Counter(colors)  
+&gt;&gt;&gt;print(dict(c))    #统计频次
+{&apos;red&apos;: 2, &apos;blue&apos;: 3, &apos;green&apos;: 1, &apos;orange&apos;: 1, &apos;black&apos;: 1}  
+&gt;&gt;&gt;print(c.most_common(3))    #统计频次排名前三的元素
+[(&apos;blue&apos;, 3), (&apos;red&apos;, 2), (&apos;green&apos;, 1)]
 
+&gt;&gt;&gt; c = Counter(&apos;abcdeabcdabcaba&apos;)  # count elements from a string  
+&gt;&gt;&gt; c.most_common(3)                # three most common elements  
+[(&apos;a&apos;, 5), (&apos;b&apos;, 4), (&apos;c&apos;, 3)]</code></pre>
             </div>
             <hr/>
 
@@ -504,7 +529,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://jeffreylyx.github.io/2020/07/07/%E6%9C%89%E7%94%A8%E7%9A%84%E7%BD%91%E7%AB%99/">https://jeffreylyx.github.io/2020/07/07/%E6%9C%89%E7%94%A8%E7%9A%84%E7%BD%91%E7%AB%99/</a>
+                    <a href="https://jeffreylyx.github.io/2020/07/27/Python%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7%E5%BA%93%E5%87%BD%E6%95%B0/">https://jeffreylyx.github.io/2020/07/27/Python%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7%E5%BA%93%E5%87%BD%E6%95%B0/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -542,12 +567,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99/">
-                                    <span class="chip bg-color">学习资料</span>
-                                </a>
-                            
-                                <a href="/tags/%E7%BD%91%E7%AB%99/">
-                                    <span class="chip bg-color">网站</span>
+                                <a href="/tags/Python%E5%87%BD%E6%95%B0/">
+                                    <span class="chip bg-color">Python函数</span>
                                 </a>
                             
                         </div>
@@ -715,9 +736,67 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2020/07/27/Python%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7%E5%BA%93%E5%87%BD%E6%95%B0/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="Python常用工具库函数">
+                        
+                        <span class="card-title">Python常用工具库函数</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+矩阵求和：np.sum()
+词频统计：collections.Counter()
+
+numpy.sum()
+主要用于数组元素求和
+
+sum(a, axis=None, dtype=None, out=None, keepdims=np._
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-27
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%B7%A5%E5%85%B7%E7%AE%B1/" class="post-category">
+                                    工具箱
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Python%E5%87%BD%E6%95%B0/">
+                        <span class="chip bg-color">Python函数</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
             <div class="card">
                 <a href="/2020/07/09/%E5%BE%AA%E7%8E%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/">
                     <div class="card-image">
@@ -739,9 +818,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-07-09
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-09
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -763,68 +842,6 @@
                     
                     <a href="/tags/LSTM/">
                         <span class="chip bg-color">LSTM</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
-            </div>
-            <div class="card">
-                <a href="/2020/07/07/%E6%9C%89%E7%94%A8%E7%9A%84%E7%BD%91%E7%AB%99/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="有用的网站">
-                        
-                        <span class="card-title">有用的网站</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-李宏毅深度学习的视频及作业
-
-RNN作业
-
-pytorch入门
-
-
-
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-07
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E5%B7%A5%E5%85%B7%E7%AE%B1/" class="post-category">
-                                    工具箱
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99/">
-                        <span class="chip bg-color">学习资料</span>
-                    </a>
-                    
-                    <a href="/tags/%E7%BD%91%E7%AB%99/">
-                        <span class="chip bg-color">网站</span>
                     </a>
                     
                 </div>
@@ -999,13 +1016,6 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 
 </main>
 
-
-<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-<script>
-    MathJax.Hub.Config({
-        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
-    });
-</script>
 
 
 
