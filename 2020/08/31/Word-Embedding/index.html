@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="我们的故事, 星辰大海">
+    <meta name="keywords" content="Word Embedding, 星辰大海">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>我们的故事 | 星辰大海</title>
+    <title>Word Embedding | 星辰大海</title>
     <link rel="icon" type="image/jpeg" href="/%E7%8B%97%E5%A4%B4.jpg">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -317,12 +317,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/images/1598274355314.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">我们的故事</h1>
+                    <h1 class="description center-align post-title">Word Embedding</h1>
                 </div>
             </div>
         </div>
@@ -437,12 +437,25 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Word-Embedding/">
+                                <span class="chip bg-color">Word Embedding</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/NLP/" class="post-category">
+                                NLP
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -451,7 +464,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-08-24
+                    2020-08-31
                 </div>
                 
 
@@ -467,419 +480,18 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <div align="middle"><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=1411358329&auto=1&height=66"></iframe></div>
-
-<h1 id="让我如何感谢你，当我走向你的时候"><a href="#让我如何感谢你，当我走向你的时候" class="headerlink" title="让我如何感谢你，当我走向你的时候"></a>让我如何感谢你，当我走向你的时候</h1><h1 id="我原想收获一缕春风，你却给了我整个春天。"><a href="#我原想收获一缕春风，你却给了我整个春天。" class="headerlink" title="我原想收获一缕春风，你却给了我整个春天。"></a>我原想收获一缕春风，你却给了我整个春天。</h1><h2 id="2019-11-3（缘分开始）"><a href="#2019-11-3（缘分开始）" class="headerlink" title="2019.11.3（缘分开始）"></a>2019.11.3（缘分开始）</h2><p><em>因为在篮球赛上看见了你，果然缘分没有让我失望。</em><br><br></p>
-<table>
-<tr>
-<td><img src=mmexport1598264688362.jpg height="300" width="300"></td>
-</tr>
-<tr>
-</tr>
-</table>
-
-<h2 id="2019-11-14（买花告白）"><a href="#2019-11-14（买花告白）" class="headerlink" title="2019.11.14（买花告白）"></a>2019.11.14（买花告白）</h2><p><em>虽然只和你认识一个星期不到，但就是莫名其妙地满怀自信，买好鲜花期待着晚上和你告白。</em><br><br></p>
-<table>
-<tr>
-<td><img src=mmexport1573711634834.jpg height="350" width="350"></td>
-<td><img src=IMG_20191114_140417.jpg height="250" width="250"></td>
-</tr>
-<tr>
-</tr>
-</table>
-
-<h2 id="2019-11-17（尧山之旅）"><a href="#2019-11-17（尧山之旅）" class="headerlink" title="2019.11.17（尧山之旅）"></a>2019.11.17（尧山之旅）</h2><p><em>告白被拒，你说了解地还不够深，希望再相处一段时间，于是周末约好一起去尧山玩。</em>    </p>
+                <h2 id="为什么要用到词向量？"><a href="#为什么要用到词向量？" class="headerlink" title="为什么要用到词向量？"></a>为什么要用到词向量？</h2><p>自然语言理解的问题要转化为机器学习的问题，第一步肯定是要找一种方法把这些符号数学化。<br>NLP 中最直观，也是到目前为止最常用的词表示方法是 One-hot Representation，这种方法把每个词表示为一个很长的向量。这个向量的维度是词表大小，其中绝大多数元素为 0，只有一个维度的值为 1，这个维度就代表了当前的词。<br>举个栗子，<br>“话筒”表示为 [0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 …]<br>“麦克”表示为 [0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 …]<br>每个词都是茫茫 0 海中的一个 1。<br><img src="1.png" alt=""><br><img src="2.png" alt=""><br>这种 One-hot Representation 如果采用稀疏方式存储，会是非常的简洁：也就是给每个词分配一个数字 ID。比如刚才的例子中，话筒记为 3，麦克记为 8（假设从 0 开始记）。如果要编程实现的话，用 Hash 表给每个词分配一个编号就可以了。这么简洁的表示方法配合上最大熵、SVM、CRF 等等算法已经很好地完成了 NLP 领域的各种主流任务。<br>当然这种表示方法也存在一个重要的问题就是“词汇鸿沟”现象：任意两个词之间都是孤立的。光从这两个向量中看不出两个词是否有关系，哪怕是话筒和麦克这样的同义词也不能幸免于难。</p>
+<h2 id="机器学习中的词向量"><a href="#机器学习中的词向量" class="headerlink" title="机器学习中的词向量"></a>机器学习中的词向量</h2><p>Deep Learning 中一般用到的词向量并不是刚才提到的用 One-hot Representation 表示的那种很长很长的词向量，而是用 Distributed Representation表示的一种低维实数向量。<br>这种向量一般长成这个样子：[0.792, −0.177, −0.107, 0.109, −0.542, …]。<br>维度以 50 维和 100 维比较常见。这种向量的表示不是唯一的，后文会提到目前计算出这种向量的主流方法。<br>Distributed representation 最大的贡献就是让相关或者相似的词，在距离上更接近了。</p>
+<p><strong>更加详细的解释：</strong><br>比如这里有Man, Woman, King, Queen, Apple, Orange这几个单词，我们找一些特征，比如是不是和性别有关，是不是和高贵有关，是不是和年龄有关，是不是和食物有关…。<br>这样，最后每个词就可能得到一种下面的表示方式（拿吴恩达老师的图看一下）<br><img src="3.png" alt=""><br>如果用这种方法，来表示苹果和橘子的时候，苹果和橘子很定会非常相似，至少大部分特征是一样的，这样对于已经知道橙子果汁的算法，很大几率上会明白苹果果汁是什么东西。这样对于不同的单词，算法会泛化的更好。 并且，我们找的特征的个数一般会比词典小的多，比如找300个特征，那么描述每个词的话向量是300维，也比之前的one-hot的方式维度小的多。<br>所以这种方法就可以捕捉到单词之间的关联了，这就是词嵌入的一种表示方法，word-embedding。<br>那么我们是如何得到的这种表示呢？<br>其实是先有一个嵌入矩阵Embedding Matrix的。 就是一开始，我们是用one-hot，也就是字典的位置表示每个词，然后通过嵌入矩阵，就得到了每个词的词嵌入向量。 还是看图说话：<br><img src="4.png" alt=""><br>就是我们事先训练好了一个词嵌入矩阵， 这个矩阵的每一列其实就是每个单词的词向量，每一行表示一个特征，上图是一个300×10000的矩阵，就是10000个单词，每个单词都是从300个特征上进行衡量。 这样，有了这样的一个矩阵之后，我们拿这个矩阵乘以每个单词自己的one-hot的表示，就会得到每个单词的词向量表示。 即 $E*O_j=e_j$</p>
+<blockquote>
+<p>那么重点来了，这个词嵌入矩阵是怎么学习到的呢？</p>
+</blockquote>
+<p>事实上，目前生成词嵌入向量的方法不止一种，有Skip-Gram模型这种<strong>抽取上下文和目标词配对，来构造一个监督学习问题的</strong>，也有CBOW模型这种<strong>获得中间词两边的上下文，预测中间词的</strong>。<br>我们只要知道Embedding的概念以及如何应用就好了，具体的方法要懂得灵活变通。</p>
+<p>参考文章：</p>
 <ul>
-<li>第一次出去玩</li>
-<li>第一次牵你的手</li>
+<li><a href="http://licstar.net/archives/328#s25" target="_blank" rel="noopener">Deep Learning in NLP （一）词向量和语言模型</a></li>
+<li><a href="https://blog.csdn.net/wuzhongqiang/article/details/104730280" target="_blank" rel="noopener">Pytorch入门+实战系列三：Pytorch与词向量</a></li>
 </ul>
-<br>
-<table>
-<tr>
-<td><img src=beauty_20191117124857.jpg height="500" width="500"></td>
-<td><img src=IMG_20191117_122216.jpg height="400" width="300"></td>
-</tr>
-<td><img src=IMG_20191117_115204.jpg></td>
-<td><img src=IMG_20191117_114942.jpg></td>
-<tr>
-</tr>
-</table>
-
-<h2 id="2019-11-21（在一起）"><a href="#2019-11-21（在一起）" class="headerlink" title="2019.11.21（在一起）"></a>2019.11.21（在一起）</h2><p><em>虽然没有留下照片，但我始终记得在操场信誓旦旦地告白。</em></p>
-<h2 id="2019-11-22（骑车带你去逍遥楼）"><a href="#2019-11-22（骑车带你去逍遥楼）" class="headerlink" title="2019.11.22（骑车带你去逍遥楼）"></a>2019.11.22（骑车带你去逍遥楼）</h2><p><em>正好你晚上也没有事儿，那就一起出去玩儿吧！</em><br><em>万幸你的牛仔外套很合身，送你回宿舍时还偷偷吻了我一下。</em></p>
-<ul>
-<li>第一次接吻</li>
-</ul>
-<br>
-<table>
-<tr>
-<td><img src=beauty_20191122221332.jpg></td>
-<td><img src=IMG_20191122_220842.jpg></td>
-</tr>
-<tr>
-<td><img src=IMG_20191122_220105.jpg></td>
-<td><img src=IMG_20191122_220220.jpg></td>
-</tr>
-</table>
-
-<h2 id="2019-11-24-撮合小刘和小陈"><a href="#2019-11-24-撮合小刘和小陈" class="headerlink" title="2019.11.24(撮合小刘和小陈)"></a>2019.11.24(撮合小刘和小陈)</h2><p><em>看了电影，吃了哥俩好，看了日月双塔，还是觉得两个人更好。</em></p>
-<ul>
-<li>第一次一起看电影</li>
-</ul>
-<br>
-<table>
-<tr>
-<td><img src=1598273521136.jpg></td>
-<td><img src=1598273521256.jpg></td>
-</tr>
-<tr>
-<td><img src=1598273521326.jpg ></td>
-<td><img src=1598273521391.jpg height="400" width="300"></td>
-</tr>
-</table>
-
-<h2 id="2019-11-26-西区吃面"><a href="#2019-11-26-西区吃面" class="headerlink" title="2019.11.26(西区吃面)"></a>2019.11.26(西区吃面)</h2><p><em>你穿上我衣服的样子，像极了小学生。</em></p>
-<br>
-<table>
-<tr>
-<td><img src=1598273983618.jpg></td>
-<td><img src=1598273999174.jpg></td>
-</tr>
-</table>
-
-<h2 id="2019-12-1（火锅冰淇淋）"><a href="#2019-12-1（火锅冰淇淋）" class="headerlink" title="2019.12.1（火锅冰淇淋）"></a>2019.12.1（火锅冰淇淋）</h2><p><em>满足你冬天吃冰淇淋的想法，顺带吃个火锅~</em></p>
-<br>
-<table>
-<tr>
-<td><img src=1598274140076.jpg></td>
-<td><img src=1598274158358.jpg></td>
-</tr>
-</table>
-
-<h2 id="2019-12-8（海洋乡之旅）"><a href="#2019-12-8（海洋乡之旅）" class="headerlink" title="2019.12.8（海洋乡之旅）"></a>2019.12.8（海洋乡之旅）</h2><p><em>第一次出远门，海洋乡看银杏，留下了很多珍贵的照片。</em></p>
-<br>
-<table>
-<tr>
-<td><img src=1598274304443.jpg></td>
-<td><img src=1598274327023.jpg></td>
-</tr>
-<tr>
-<td><img src=1598274355314.jpg height="400" width="300"></td>
-<td><img src=1598274385089.jpg height="400" width="300"></td>
-</tr>
-</table>
-
-<h2 id="2019-12-15（私人影院）"><a href="#2019-12-15（私人影院）" class="headerlink" title="2019.12.15（私人影院）"></a>2019.12.15（私人影院）</h2><p><em>电影只看了个大概，炸鸡很好吃，海鲜粥比较一般</em><br><em>沙发上的拥吻印象最深刻^ ^</em></p>
-<br>
-<table>
-<tr>
-<td><img src=1598274586774.jpg></td>
-<td><img src=1598274599899.jpg></td>
-</tr>
-</table>
-
-<h2 id="2019-12-28（元旦晚会）"><a href="#2019-12-28（元旦晚会）" class="headerlink" title="2019.12.28（元旦晚会）"></a>2019.12.28（元旦晚会）</h2><p><em>站在舞台上的你格外的耀眼。</em></p>
-<br>
-<table>
-<tr>
-<td><img src=mmexport1577497434964.jpg  height="400" width="300"></td>
-<td><img src=mmexport1577497442333.jpg  height="400" width="300"></td>
-</tr>
-</table>
-
-<h2 id="2020-1-1（跨年夜）"><a href="#2020-1-1（跨年夜）" class="headerlink" title="2020.1.1（跨年夜）"></a>2020.1.1（跨年夜）</h2><p><em>急匆匆地一起跑去跨年啦，新的一年要对你更加《宠爱》</em><br><em>2020第一天恰火锅，咱俩的日子一定会红红火火的！</em></p>
-<br>
-<table>
-<tr>
-<td><img src=beauty_20200101002552.jpg></td>
-<td><img src=beauty_20200101002352.jpg></td>
-</tr>
-<tr>
-<td><img src=1598274990528.jpg></td>
-<td><img src=1598275034740.jpg></td>
-</tr>
-</table>
-
-<h2 id="2020-1-4（陪你复习）"><a href="#2020-1-4（陪你复习）" class="headerlink" title="2020.1.4（陪你复习）"></a>2020.1.4（陪你复习）</h2><p><em>虽然口语课期末考试遇到了一些不愉快，但还是要好好复习备战英语！</em></p>
-<br>
-<table>
-<tr>
-<td><img src=1598275417340.jpg></td>
-<td><img src=1598275406126.jpg></td>
-</tr>
-</table>
-
-<h2 id="2020-1-7（补过圣诞节）"><a href="#2020-1-7（补过圣诞节）" class="headerlink" title="2020.1.7（补过圣诞节）"></a>2020.1.7（补过圣诞节）</h2><p><em>圣诞节因为考试没有出来玩，还好圣诞树还在~</em><br><em>冰淇淋和炸鸡依然是标配</em></p>
-<br>
-<table>
-<tr>
-<td><img src=beauty_20200107215959.jpg height="300" width="400"></td>
-<td><img src=beauty_20200107210912.jpg height="300" width="400"></td>
-</tr>
-<tr>
-<td><img src=beauty_20200107205040.jpg height="300" width="400"></td>
-<td><img src=1598282896812.jpg height="300" width="400"></td>
-</tr>
-</table>
-
-<h2 id="2020-1-9（放寒假-Day1）"><a href="#2020-1-9（放寒假-Day1）" class="headerlink" title="2020.1.9（放寒假 Day1）"></a>2020.1.9（放寒假 Day1）</h2><p><em>放假前肯定要好好陪陪我的小宝贝</em><br><em>补上了之前错过的《误杀》</em></p>
-<br>
-<table>
-<tr>
-<td><img src=1598283076157.jpg></td>
-<td><img src=beauty_20200108230555.jpg></td>
-</tr>
-<tr>
-<td><img src=beauty_20200109141111.jpg height="400" width="300"></td>
-<td><img src=1598283076066.jpg></td>
-</tr>
-</table>
-
-<h2 id="2020-1-10（放寒假-Day2）"><a href="#2020-1-10（放寒假-Day2）" class="headerlink" title="2020.1.10（放寒假 Day2）"></a>2020.1.10（放寒假 Day2）</h2><p><em>最喜欢肯德基的落地窗座位，因为抬头就能看见你。</em></p>
-<br>
-<table>
-<tr>
-<td><img src=1598283441737.jpg></td>
-<td><img src=1598283441793.jpg></td>
-</tr>
-<tr>
-<td><img src=1598283441854.jpg></td>
-<td><img src=1598283441920.jpg></td>
-</tr>
-</table>
-
-<h2 id="2020-1-11（放寒假-Day3）"><a href="#2020-1-11（放寒假-Day3）" class="headerlink" title="2020.1.11（放寒假 Day3）"></a>2020.1.11（放寒假 Day3）</h2><p><em>明天就要去厦门了，能多呆一会儿是一会儿。</em></p>
-<br>
-<table>
-<tr>
-<td><img src=1598283644873.jpg></td>
-<td><img src=1598283644786.jpg></td>
-</tr>
-<tr>
-<td><img src=1598283644687.jpg></td>
-<td><img src=1598283644743.jpg></td>
-</tr>
-</table>
-
-<h2 id="2020-1-12（寒假离别）"><a href="#2020-1-12（寒假离别）" class="headerlink" title="2020.1.12（寒假离别）"></a>2020.1.12（寒假离别）</h2><p><em>本来以为只是短暂的十几天分离，却因为疫情延长了4个月没见面。</em></p>
-<br>
-<table>
-<tr>
-<td><img src=1598283856699.jpg></td>
-<td><img src=1598283856769.jpg></td>
-</tr>
-</table>
-
-<h2 id="2020-5-9（春节后的第一次见面）"><a href="#2020-5-9（春节后的第一次见面）" class="headerlink" title="2020.5.9（春节后的第一次见面）"></a>2020.5.9（春节后的第一次见面）</h2><p><em>期待已久的返校，还有火车站见面时的拥抱。</em><br><em>宝贝买的察颜悦色格外的好喝！</em><br><em>隔离生活虽然单调，还有有你每天晚上在楼下和我说话。</em></p>
-<br>
-<table>
-<tr>
-<td><img src=1598284060380.jpg height="500" width="400"></td>
-<td><img src=-436c711db6c4e5a1.jpg height="500" width="400"></td>
-</tr>
-</table>
-
-<h2 id="2020-6-15（蓝天）"><a href="#2020-6-15（蓝天）" class="headerlink" title="2020.6.15（蓝天）"></a>2020.6.15（蓝天）</h2><p><em>和你在一起的时候天总是很蓝。</em></p>
-<br>
-<table>
-<tr>
-<td><img src=beauty_20200615185208.jpg height="500" width="400"></td>
-<td><img src=beauty_20200615185012.jpg height="500" width="400"></td>
-</tr>
-<tr>
-<td><img src=1598284398113.jpg></td>
-<td><img src=1598284398053.jpg></td>
-</tr>
-</table>
-
-<h2 id="2020-6-20（封锁校园后第一次出来玩）"><a href="#2020-6-20（封锁校园后第一次出来玩）" class="headerlink" title="2020.6.20（封锁校园后第一次出来玩）"></a>2020.6.20（封锁校园后第一次出来玩）</h2><p><em>开心的你，还有发福的我。</em><br><em>第一次吃老王串串，半小时没白等~</em></p>
-<br>
-<table>
-<tr>
-<td><img src=beauty_20200620220937.jpg height="300" width="400"></td>
-<td><img src=beauty_20200620220412.jpg height="300" width="400"></td>
-</tr>
-<tr>
-<td><img src=1598284498862.jpg></td>
-<td><img src=1598284498800.jpg></td>
-</tr>
-</table>
-
-<h2 id="2020-6-24（端午节）"><a href="#2020-6-24（端午节）" class="headerlink" title="2020.6.24（端午节）"></a>2020.6.24（端午节）</h2><p><em>学校贴心地送粽子和咸鸭蛋</em><br><em>第一次晚上在外面吃烧烤，你的好酒量在我面前好像不太行^ ^</em></p>
-<br>
-<table>
-<tr>
-<td><img src=1598284943421.jpg></td>
-<td><img src=1598284943361.jpg></td>
-</tr>
-<tr>
-<td><img src=1598284943218.jpg></td>
-<td><img src=1598284943291.jpg></td>
-</tr>
-</table>
-
-<h2 id="2020-6-28（圆月）"><a href="#2020-6-28（圆月）" class="headerlink" title="2020.6.28（圆月）"></a>2020.6.28（圆月）</h2><p><em>但愿人长久，千里更婵娟。</em></p>
-<br>
-<table>
-<tr>
-<td><img src=1598285719944.jpg></td>
-<td><img src=1598285719987.jpg></td>
-</tr>
-</table>
-
-<h2 id="2020-7-3（韩国大叔的烤肉）"><a href="#2020-7-3（韩国大叔的烤肉）" class="headerlink" title="2020.7.3（韩国大叔的烤肉）"></a>2020.7.3（韩国大叔的烤肉）</h2><p><em>正宗韩国老板开的烤肉店，烧酒还不错~</em><br><em>某人说“这种事情，就得喝完酒之后做。”</em></p>
-<br>
-<table>
-<tr>
-<td><img src=1598285864606.jpg></td>
-<td><img src=1598285864666.jpg></td>
-</tr>
-<tr>
-<td><img src=1598285864723.jpg></td>
-<td><img src=1598285864788.jpg></td>
-</tr>
-</table>
-
-<h2 id="2020-7-4（吃牛蛙）"><a href="#2020-7-4（吃牛蛙）" class="headerlink" title="2020.7.4（吃牛蛙）"></a>2020.7.4（吃牛蛙）</h2><p><em>牛蛙没有想象中的好吃，奶茶也不好喝</em><br><em>公交上的风景很美</em></p>
-<br>
-<table>
-<tr>
-<td><img src=1598286097203.jpg></td>
-<td><img src=1598286097275.jpg></td>
-</tr>
-<tr>
-<td><img src=1598286097332.jpg></td>
-<td><img src=1598286097126.jpg></td>
-</tr>
-</table>
-
-<h2 id="2020-7-5（宿舍路上的影子）"><a href="#2020-7-5（宿舍路上的影子）" class="headerlink" title="2020.7.5（宿舍路上的影子）"></a>2020.7.5（宿舍路上的影子）</h2><p><em>送你回宿舍路上拍的影子。</em></p>
-<br>
-<table>
-<tr>
-<td><img src=1598286208697.jpg></td>
-<td><img src=1598286208766.jpg></td>
-</tr>
-</table>
-
-<h2 id="2020-7-8（实验室恰外卖）"><a href="#2020-7-8（实验室恰外卖）" class="headerlink" title="2020.7.8（实验室恰外卖）"></a>2020.7.8（实验室恰外卖）</h2><p><em>虽然吃外卖已成为我实验室的一种文化，你却总是不好意思。</em><br><em>还有你喜欢的眼睛</em></p>
-<br>
-<table>
-<tr>
-<td><img src=beauty_20200708191603.jpg height="500" width="400"></td>
-<td><img src=beauty_20200708190440.jpg height="500" width="400"></td>
-</tr>
-<tr>
-<td><img src=beauty_20200708190544.jpg height="500" width="400"></td>
-<td><img src=1598286535851.jpg height="500" width="400"></td>
-</tr>
-</table>
-
-<h2 id="2020-7-11（肯德基半价桶）"><a href="#2020-7-11（肯德基半价桶）" class="headerlink" title="2020.7.11（肯德基半价桶）"></a>2020.7.11（肯德基半价桶）</h2><p><em>又是热量满满的一天。</em></p>
-<br>
-<table>
-<tr>
-<td><img src=1598286879606.jpg></td>
-<td><img src=1598286879686.jpg></td>
-</tr>
-<tr>
-<td><img src=1598286879772.jpg></td>
-<td><img src=beauty_20200711140425.jpg></td>
-</tr>
-</table>
-
-<h2 id="2020-7-12（剧本杀）"><a href="#2020-7-12（剧本杀）" class="headerlink" title="2020.7.12（剧本杀）"></a>2020.7.12（剧本杀）</h2><p><em>为了撮合小胖和发展对象，结果没想到他们不需要…</em><br><em>宝贝穿旗袍真显身材~</em></p>
-<br>
-<table>
-<tr>
-<td><img src=mmexport1594576506064.jpg></td>
-<td><img src=1598287066478.jpg></td>
-</tr>
-</table>
-
-<h2 id="2020-7-20（一起过生日）"><a href="#2020-7-20（一起过生日）" class="headerlink" title="2020.7.20（一起过生日）"></a>2020.7.20（一起过生日）</h2><p><em>最喜欢的鞋子，没有之一。</em><br><em>宝贝做蛋糕的样子最好看。</em><br><em>希望还能一起过很多个生日~</em></p>
-<ul>
-<li>第一次一起做蛋糕</li>
-</ul>
-<br>
-<table>
-<tr>
-<td><img src=1598287288422.jpg height="400" width="500"></td>
-<td><img src=beauty_20200720170211.jpg height="700" width="500"></td>
-</tr>
-<tr>
-<td><img src=wx_camera_1595236623385.jpg height="100" width="400"></td>
-<td><img src=1598287288385.jpg height="500" width="400"></td>
-</tr>
-</table>
-
-<h2 id="2020-7-23（哈哈镜）"><a href="#2020-7-23（哈哈镜）" class="headerlink" title="2020.7.23（哈哈镜）"></a>2020.7.23（哈哈镜）</h2><p><em>哈哈镜下的俩憨憨。</em></p>
-<br>
-<table>
-<tr>
-<td><img src=1598287443105.jpg></td>
-<td><img src=1598287443016.jpg></td>
-</tr>
-</table>
-
-<h2 id="2020-7-25（万象城）"><a href="#2020-7-25（万象城）" class="headerlink" title="2020.7.25（万象城）"></a>2020.7.25（万象城）</h2><p><em>你喜欢的小黄花和榴莲披萨。</em></p>
-<br>
-<table>
-<tr>
-<td><img src=beauty_20200725225153.jpg height="300" width="400"></td>
-<td><img src=1598287652354.jpg height="300" width="400"></td>
-</tr>
-<tr>
-<td><img src=1598287652293.jpg></td>
-<td><img src=1598287652230.jpg></td>
-</tr>
-</table>
-
-<h2 id="2020-8-2（一起运动）"><a href="#2020-8-2（一起运动）" class="headerlink" title="2020.8.2（一起运动）"></a>2020.8.2（一起运动）</h2><p><em>到底谁的腿又长又白？</em></p>
-<br>
-<table>
-<tr>
-<td><img src=1598287862148.jpg height="500" width="400"></td>
-<td><img src=1598287862257.jpg height="500" width="400"></td>
-</tr>
-</table>
-
-<h2 id="2020-8-6（油闷大虾和烤鱼）"><a href="#2020-8-6（油闷大虾和烤鱼）" class="headerlink" title="2020.8.6（油闷大虾和烤鱼）"></a>2020.8.6（油闷大虾和烤鱼）</h2><p><em>这个夏天第一次吃油闷大虾</em><br><em>还有你新做的指甲~</em></p>
-<br>
-<table>
-<tr>
-<td><img src=1598287980541.jpg></td>
-<td><img src=1598287980609.jpg></td>
-</tr>
-<tr>
-<td><img src=beauty_20200807165411.jpg></td>
-<td><img src=beauty_20200807164909.jpg></td>
-</tr>
-</table>
-
-<h2 id="2020-8-14（黑冰淇淋）"><a href="#2020-8-14（黑冰淇淋）" class="headerlink" title="2020.8.14（黑冰淇淋）"></a>2020.8.14（黑冰淇淋）</h2><p><em>在一起久了，也跟着变得很幼稚…</em></p>
-<br>
-<table>
-<tr>
-<td><img src=1598288167144.jpg height="300" width="400"></td>
-<td><img src=beauty_20200814185421.jpg height="200" width="400"></td>
-</tr>
-</table>
-
-<h2 id="2020-8-16（万福广场）"><a href="#2020-8-16（万福广场）" class="headerlink" title="2020.8.16（万福广场）"></a>2020.8.16（万福广场）</h2><p><em>和喜欢的人，吃喜欢的饭。</em><br><em>我老婆真好看。</em></p>
-<br>
-<table>
-<tr>
-<td><img src=1598288395495.jpg height="300" width="400"></td>
-<td><img src=1598288395309.jpg height="400" width="400"></td>
-</tr>
-<tr>
-<td><img src=1598288395251.jpg height="300" width="400"></td>
-<td><img src=1598288395089.jpg height="400" width="400"></td>
-</tr>
-</table>
-
-
 
             </div>
             <hr/>
@@ -905,7 +517,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://jeffreylyx.github.io/2020/08/24/%E6%88%91%E4%BB%AC%E7%9A%84%E6%95%85%E4%BA%8B/">https://jeffreylyx.github.io/2020/08/24/%E6%88%91%E4%BB%AC%E7%9A%84%E6%95%85%E4%BA%8B/</a>
+                    <a href="https://jeffreylyx.github.io/2020/08/31/Word-Embedding/">https://jeffreylyx.github.io/2020/08/31/Word-Embedding/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -942,7 +554,11 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/Word-Embedding/">
+                                    <span class="chip bg-color">Word Embedding</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -985,7 +601,7 @@
         repo: 'jeffreylyx.github.io',
         owner: 'jeffreylyx',
         admin: "jeffreylyx",
-        id: '2020-08-24T13-28-35',
+        id: '2020-08-31T10-53-08',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -1014,44 +630,46 @@
                 <i class="far fa-dot-circle"></i>&nbsp;本篇
             </div>
             <div class="card">
-                <a href="/2020/08/24/%E6%88%91%E4%BB%AC%E7%9A%84%E6%95%85%E4%BA%8B/">
+                <a href="/2020/08/31/Word-Embedding/">
                     <div class="card-image">
                         
-                        <img src="/images/1598274355314.jpg" class="responsive-img" alt="我们的故事">
                         
-                        <span class="card-title">我们的故事</span>
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="Word Embedding">
+                        
+                        <span class="card-title">Word Embedding</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
-
-让我如何感谢你，当我走向你的时候我原想收获一缕春风，你却给了我整个春天。2019.11.3（缘分开始）因为在篮球赛上看见了你，果然缘分没有让我失望。
-
-
-
-
-
-
-
-
-2019.11.14（买花告白）虽然只和你认识一个星期不到，但就是莫名
+                            为什么要用到词向量？自然语言理解的问题要转化为机器学习的问题，第一步肯定是要找一种方法把这些符号数学化。NLP 中最直观，也是到目前为止最常用的词表示方法是 One-hot Representation，这种方法把每个词表示为一个很长的向量
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-08-24
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-08-31
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            Jeffrey
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/NLP/" class="post-category">
+                                    NLP
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
 
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Word-Embedding/">
+                        <span class="chip bg-color">Word Embedding</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
@@ -1279,6 +897,13 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 
 </main>
 
+
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
+    });
+</script>
 
 
 
