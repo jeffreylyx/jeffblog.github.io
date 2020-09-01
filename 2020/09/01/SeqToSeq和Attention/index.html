@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Word Embedding, 星辰大海">
+    <meta name="keywords" content="SeqToSeq和Attention, 星辰大海">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Word Embedding | 星辰大海</title>
+    <title>SeqToSeq和Attention | 星辰大海</title>
     <link rel="icon" type="image/jpeg" href="/%E7%8B%97%E5%A4%B4.jpg">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -317,12 +317,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Word Embedding</h1>
+                    <h1 class="description center-align post-title">SeqToSeq和Attention</h1>
                 </div>
             </div>
         </div>
@@ -439,8 +439,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Word-Embedding/">
-                                <span class="chip bg-color">Word Embedding</span>
+                            <a href="/tags/SeqToSeq/">
+                                <span class="chip bg-color">SeqToSeq</span>
+                            </a>
+                        
+                            <a href="/tags/Attention/">
+                                <span class="chip bg-color">Attention</span>
                             </a>
                         
                     </div>
@@ -464,7 +468,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-08-31
+                    2020-09-01
                 </div>
                 
 
@@ -480,17 +484,23 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="为什么要用到词向量？"><a href="#为什么要用到词向量？" class="headerlink" title="为什么要用到词向量？"></a>为什么要用到词向量？</h2><p>自然语言理解的问题要转化为机器学习的问题，第一步肯定是要找一种方法把这些符号数学化。<br>NLP 中最直观，也是到目前为止最常用的词表示方法是 One-hot Representation，这种方法把每个词表示为一个很长的向量。这个向量的维度是词表大小，其中绝大多数元素为 0，只有一个维度的值为 1，这个维度就代表了当前的词。<br>举个栗子，<br>“话筒”表示为 [0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 …]<br>“麦克”表示为 [0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 …]<br>每个词都是茫茫 0 海中的一个 1。<br><img src="1.png" alt=""><br><img src="2.png" alt=""><br>这种 One-hot Representation 如果采用稀疏方式存储，会是非常的简洁：也就是给每个词分配一个数字 ID。比如刚才的例子中，话筒记为 3，麦克记为 8（假设从 0 开始记）。如果要编程实现的话，用 Hash 表给每个词分配一个编号就可以了。这么简洁的表示方法配合上最大熵、SVM、CRF 等等算法已经很好地完成了 NLP 领域的各种主流任务。<br>当然这种表示方法也存在一个重要的问题就是“词汇鸿沟”现象：任意两个词之间都是孤立的。光从这两个向量中看不出两个词是否有关系，哪怕是话筒和麦克这样的同义词也不能幸免于难。</p>
-<h2 id="机器学习中的词向量"><a href="#机器学习中的词向量" class="headerlink" title="机器学习中的词向量"></a>机器学习中的词向量</h2><p>Deep Learning 中一般用到的词向量并不是刚才提到的用 One-hot Representation 表示的那种很长很长的词向量，而是用 Distributed Representation表示的一种低维实数向量。<br>这种向量一般长成这个样子：[0.792, −0.177, −0.107, 0.109, −0.542, …]。<br>维度以 50 维和 100 维比较常见。这种向量的表示不是唯一的，后文会提到目前计算出这种向量的主流方法。<br>Distributed representation 最大的贡献就是让相关或者相似的词，在距离上更接近了。</p>
-<p><strong>更加详细的解释：</strong><br>比如这里有Man, Woman, King, Queen, Apple, Orange这几个单词，我们找一些特征，比如是不是和性别有关，是不是和高贵有关，是不是和年龄有关，是不是和食物有关…。<br>这样，最后每个词就可能得到一种下面的表示方式（拿吴恩达老师的图看一下）<br><img src="3.png" alt=""><br>如果用这种方法，来表示苹果和橘子的时候，苹果和橘子很定会非常相似，至少大部分特征是一样的，这样对于已经知道橙子果汁的算法，很大几率上会明白苹果果汁是什么东西。这样对于不同的单词，算法会泛化的更好。 并且，我们找的特征的个数一般会比词典小的多，比如找300个特征，那么描述每个词的话向量是300维，也比之前的one-hot的方式维度小的多。<br>所以这种方法就可以捕捉到单词之间的关联了，这就是词嵌入的一种表示方法，word-embedding。<br>那么我们是如何得到的这种表示呢？<br>其实是先有一个嵌入矩阵Embedding Matrix的。 就是一开始，我们是用one-hot，也就是字典的位置表示每个词，然后通过嵌入矩阵，就得到了每个词的词嵌入向量。 还是看图说话：<br><img src="4.png" alt=""><br>就是我们事先训练好了一个词嵌入矩阵， 这个矩阵的每一列其实就是每个单词的词向量，每一行表示一个特征，上图是一个300×10000的矩阵，就是10000个单词，每个单词都是从300个特征上进行衡量。 这样，有了这样的一个矩阵之后，我们拿这个矩阵乘以每个单词自己的one-hot的表示，就会得到每个单词的词向量表示。 即 $E*O_j=e_j$</p>
-<blockquote>
-<p>那么重点来了，这个词嵌入矩阵是怎么学习到的呢？</p>
-</blockquote>
-<p>事实上，目前生成词嵌入向量的方法不止一种，有Skip-Gram模型这种<strong>抽取上下文和目标词配对，来构造一个监督学习问题的</strong>，也有CBOW模型这种<strong>获得中间词两边的上下文，预测中间词的</strong>。<br>我们只要知道Embedding的概念以及如何应用就好了，具体的方法要懂得灵活变通。</p>
+                <h2 id="为什么会出现SeqToSeq"><a href="#为什么会出现SeqToSeq" class="headerlink" title="为什么会出现SeqToSeq?"></a>为什么会出现SeqToSeq?</h2><p>RNN擅长处理序列数据，但是根据其结构特点，只能适用于输入和输出序列长度一致的情况。</p>
+<p>SeqToSeq为了解决输入序列和输出序列不对等的问题而出现。</p>
+<p>如果是比较复杂的任务， 不是让RNN预测词语， 而是让它做机器翻译， 我输入一个句子，让它输出一个句子了， 这时候RNN就表现的不是那么出色了， 为啥呢？ 因为这种情况， 我们的输入和输出都是不定长的序列，比如将一句中文翻译成英文，那么这句英文的长度有可能会比中文短，也有可能会比中文长， 输出就不确定了。 这时候单独用一个RNN网络就不是那么好了， 所以就想到了能不能用两个RNN网络把输入的处理和输出的处理分开进行呢， 就诞生了Seq2Seq模型。</p>
+<p>Seq2Seq模型是输出的长度不确定时采用的模型， 现在应用场景也非常普遍， 在机器翻译， 人机对话等都会看到这种模型的身影。 </p>
+<h2 id="SeqToSeq模型"><a href="#SeqToSeq模型" class="headerlink" title="SeqToSeq模型"></a>SeqToSeq模型</h2><p>其实就是由两个RNN网络组成， 左边那个叫做编码器， 负责的是将我们的输入进行编码， 右边的叫做解码器， 负责的是基于左边的编码进行生成我们想要的结果。 这样，就能把输入和输出分开处理， 解决了输入和输出都不定长的问题。<br><img src="1.png" alt=""></p>
+<p><strong>编码器的任务：</strong><br>将句子输入到RNN中，计算出每个时间步的隐藏状态，将这些时间状态组合起来，即最终隐藏状态h。<br>h被称为上下文向量C，这个C综合了前面所有的输入信息。</p>
+<p><strong>解码器的任务：</strong><br>在第一个时间步， 会接收一个初始化的y0, 这个表示句子的起始， 一般可以初始化为<bos>, 标志着我句子要开始翻译， 还会接收一个初始化的s0, 这个表示的隐藏状态（之所以用s是为了和编码器那里的隐藏状态h区分开）, 然后就是这个输入C， 基于这三个就可以计算出第一个时间步隐藏状态s1和输出y1， 也就是第一个单词。 然后来到第二个时间步，接收第一个时间步的输出y1, 接收第一个时间步的隐藏状态s1和C三个计算出s2和y2， 这样依次进行下去， 直到遇到终止符（一般用<Eos>表示）， 也就是说当神经网络预测的概率最大的单词是EOS的时候， 神经网络就终止输出了。</p>
+<h2 id="Attention机制"><a href="#Attention机制" class="headerlink" title="Attention机制"></a>Attention机制</h2><p>当上下文向量很长时，一方面会导致解码器的计算任务过重，另一方面会影响当前输出y。</p>
+<p>在机器翻译的时候， 如果序列很长， 我翻译第一个单词相当于考虑了所有的输入信息， 这显然不符合我们翻译的习惯（我们人翻译一句话的时候也不是考虑所有的句子再进行翻译吧）， 我们做翻译的时候，通常是先将长的句子分段， 翻译的时候， 只聚焦于对某一小段进行翻译， 这样会比较准确。 比如翻译“I love China, because it 巴拉巴拉”， 那么我翻译第一个词的时候， 是不是更关注于” love China”, 然后翻译出“我”， 而不需要关注后面那一长串， 同理翻译love的时候， 更关注I和China多一些？</p>
+<p>Attention机制和SeqToSeq并不冲突，可以融合到一起：<br>加入match机制，使每个时间段的输入序列权重不同，这样解码器每个时间段输入的上下文向量C也不同。<strong>根据解码得出的结果z，再反作用于match</strong>，改变match机制中的参数，即每个输入序列的权重。</p>
+<p>match的形式可以是多种：</p>
+<p><img src="2.PNG" alt=""><br>工作原理：</p>
+<p><img src="3.PNG" alt=""></p>
+<p>工作细节（6个步骤）：<br>输入通过编码器的RNN得到隐藏状态信息、 给每一个隐藏状态信息打分、 把分数进行softmax获得每个隐藏状态的权重、 把权重与隐藏状态相乘、 把前面的相乘结果相加得到上下文向量C、把C放入到解码器就可以进行翻译。</p>
 <p>参考文章：</p>
 <ul>
-<li><a href="http://licstar.net/archives/328#s25" target="_blank" rel="noopener">Deep Learning in NLP （一）词向量和语言模型</a></li>
-<li><a href="https://blog.csdn.net/wuzhongqiang/article/details/104730280" target="_blank" rel="noopener">Pytorch入门+实战系列三：Pytorch与词向量</a></li>
+<li><a href="https://blog.csdn.net/wuzhongqiang/article/details/106549981" target="_blank" rel="noopener">重温Seq2Seq和Attention机制</a></li>
 </ul>
 
             </div>
@@ -517,7 +527,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://jeffreylyx.github.io/2020/08/31/Word-Embedding/">https://jeffreylyx.github.io/2020/08/31/Word-Embedding/</a>
+                    <a href="https://jeffreylyx.github.io/2020/09/01/SeqToSeq%E5%92%8CAttention/">https://jeffreylyx.github.io/2020/09/01/SeqToSeq%E5%92%8CAttention/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -555,8 +565,12 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Word-Embedding/">
-                                    <span class="chip bg-color">Word Embedding</span>
+                                <a href="/tags/SeqToSeq/">
+                                    <span class="chip bg-color">SeqToSeq</span>
+                                </a>
+                            
+                                <a href="/tags/Attention/">
+                                    <span class="chip bg-color">Attention</span>
                                 </a>
                             
                         </div>
@@ -601,7 +615,7 @@
         repo: 'jeffreylyx.github.io',
         owner: 'jeffreylyx',
         admin: "jeffreylyx",
-        id: '2020-08-31T10-53-08',
+        id: '2020-09-01T16-04-47',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -625,9 +639,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2020/09/01/SeqToSeq%E5%92%8CAttention/">
                     <div class="card-image">
@@ -647,9 +662,9 @@ SeqToSeq为了解决输入序列和输出序列不对等的问题而出现。
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-09-01
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-09-01
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -662,6 +677,7 @@ SeqToSeq为了解决输入序列和输出序列不对等的问题而出现。
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -684,38 +700,31 @@ SeqToSeq为了解决输入序列和输出序列不对等的问题而出现。
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/07/27/Python%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7%E5%BA%93%E5%87%BD%E6%95%B0/">
+                <a href="/2020/08/31/Word-Embedding/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="Python常用工具库函数">
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="Word Embedding">
                         
-                        <span class="card-title">Python常用工具库函数</span>
+                        <span class="card-title">Word Embedding</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
-矩阵求和：np.sum()
-词频统计：collections.Counter()
-
-numpy.sum()
-主要用于数组元素求和
-
-sum(a, axis=None, dtype=None, out=None, keepdims=np._
+                            为什么要用到词向量？自然语言理解的问题要转化为机器学习的问题，第一步肯定是要找一种方法把这些符号数学化。NLP 中最直观，也是到目前为止最常用的词表示方法是 One-hot Representation，这种方法把每个词表示为一个很长的向量
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-27
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-08-31
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%B7%A5%E5%85%B7%E7%AE%B1/" class="post-category">
-                                    工具箱
+                            <a href="/categories/NLP/" class="post-category">
+                                    NLP
                                 </a>
                             
                             
@@ -725,8 +734,8 @@ sum(a, axis=None, dtype=None, out=None, keepdims=np._
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Python%E5%87%BD%E6%95%B0/">
-                        <span class="chip bg-color">Python函数</span>
+                    <a href="/tags/Word-Embedding/">
+                        <span class="chip bg-color">Word Embedding</span>
                     </a>
                     
                 </div>
